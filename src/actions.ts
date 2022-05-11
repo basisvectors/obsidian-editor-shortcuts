@@ -372,6 +372,14 @@ export const expandSelectionToBrackets = (
     matchingCharacterMap: MATCHING_BRACKETS,
   });
 
+export  var levelToHeading = (editor: Editor, level: number) => {
+    const { line, ch } = editor.getCursor();
+    const lineContent = editor.getLine(line);
+    const leadingWhitespace = getLeadingWhitespace(lineContent);
+  const newLineContent = lineContent.startsWith("#") ? lineContent.replace(/^#+/, "#".repeat(level)) : `${"#".repeat(level)} ${lineContent}`;
+    editor.replaceRange(newLineContent, { line, ch: 0 }, { line, ch:ch });
+  };  
+
 export const expandSelectionToQuotes = (
   editor: Editor,
   selection: EditorSelection,

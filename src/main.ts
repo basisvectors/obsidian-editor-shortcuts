@@ -18,6 +18,7 @@ import {
   selectLine,
   selectWordOrNextOccurrence,
   transformCase,
+  levelToHeading,
 } from './actions';
 import {
   defaultMultipleSelectionOptions,
@@ -140,7 +141,50 @@ export default class CodeEditorShortcuts extends Plugin {
           args: 'down',
         }),
     });
-
+    this.addCommand({
+      id: 'levelToH1',
+      name: 'Level to H1',
+      hotkeys: [
+        {
+          modifiers: ['Mod'],
+          key: '1',
+        },
+      ],
+      editorCallback: (editor) => levelToHeading(editor, 1),
+    });
+    this.addCommand({
+      id: 'levelToH2',
+      name: 'Level to H2',
+      hotkeys: [
+        {
+          modifiers: ['Mod'],
+          key: '2',
+        },
+      ],
+      editorCallback: (editor) => levelToHeading(editor, 2),
+    });
+    this.addCommand({
+      id: 'levelToH3',
+      name: 'Level to H3',
+      hotkeys: [
+        {
+          modifiers: ['Mod'],
+          key: '3',
+        },
+      ],
+      editorCallback: (editor) => levelToHeading(editor, 3),
+    });
+    this.addCommand({
+      id: 'levelToH4',
+      name: 'Level to H4',
+      hotkeys: [
+        {
+          modifiers: ['Mod'],
+          key: '4',
+        },
+      ],
+      editorCallback: (editor) => levelToHeading(editor, 4),
+    });
     this.addCommand({
       id: 'selectWordOrNextOccurrence',
       name: 'Select word or next occurrence',
