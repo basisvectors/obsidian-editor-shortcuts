@@ -2,8 +2,14 @@
 
 This [Obsidian](https://obsidian.md) plugin adds keyboard shortcuts (hotkeys) commonly found in code editors such as Visual Studio Code or Sublime Text.
 
+This fork adds 4 extra shortcuts inspired by Typora's workspace. Use `Ctrl + 1/2/3/4` to quickly switch between headings.
+
 | Command                                          | Shortcut \*                |
 | ------------------------------------------------ | -------------------------- |
+| Change Heading Level to H1                       | `Ctrl` + `1`               |
+| Change Heading Level to H2                       | `Ctrl` + `2`               |
+| Change Heading Level to H3                       | `Ctrl` + `3`               |
+| Change Heading Level to H4                       | `Ctrl` + `4`               |
 | Insert line below                                | `Ctrl` + `Enter` \*\*      |
 | Insert line above                                | `Ctrl` + `Shift` + `Enter` |
 | Delete line                                      | `Ctrl` + `Shift` + `K`     |
@@ -31,42 +37,6 @@ This [Obsidian](https://obsidian.md) plugin adds keyboard shortcuts (hotkeys) co
 | Go to next heading                               | Not set                    |
 | Go to previous heading                           | Not set                    |
 
-\* On macOS, replace `Ctrl` with `Cmd` and `Alt` with `Opt`
+## Installation
+Copy main.js and manifest.json to `vault/.obsidian/plugins`
 
-\*\* This may conflict with the default shortcut for _Toggle checklist status_; changing/removing one of the bindings is recommended
-
-_Note:_ If you are looking for the `Alt` + `Up` and `Alt` + `Down` shortcuts from VS Code, you can assign those hotkeys to Obsidian's built in actions "Move line up" and "Move line down".
-
-### Multiple Cursors
-
-These shortcuts also work with [multiple cursors](https://help.obsidian.md/How+to/Working+with+multiple+cursors), with the exception of:
-
-- Expand selection to quotes or brackets
-- Go to next/previous heading
-
-However, if you're using Live Preview, undo and redo will not work intuitively – actions will be handled individually for each cursor, rather than grouped together. If this becomes an issue for you, you can switch back to the legacy editor in Settings as a workaround.
-
-## Installing the plugin
-
-Refer to the official installation instructions for third-party plugins [here](https://help.obsidian.md/Advanced+topics/Community+plugins).
-
-## Configuring settings
-
-Go to Settings → Hotkeys to customise the keyboard shortcut for each action.
-
-## Contributing
-
-Contributions and suggestions are welcome – feel free to open an issue or raise a pull request.
-
-To get started:
-
-- Switch to the specified Node version: `nvm use`
-- Install dependencies: `yarn install`
-- Run the extension: `yarn start`
-- Run tests: `yarn test` (use `--watch` for watch mode)
-
-## Support
-
-This plugin is completely free to use, but if you'd like to say thanks, consider buying me a coffee! 😄
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/C0C59A43G)
